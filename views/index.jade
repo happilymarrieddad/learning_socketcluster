@@ -1,0 +1,47 @@
+doctype
+html
+	head
+		title= title
+		link(rel="stylesheet",href='/css/bootstrap.min.css')
+	body
+
+		div.loading-page
+			img(src='/images/loading.gif',alt='Loading Image',width='50px',style='position: absolute; margin:auto; left:0; right:0; top:0; bottom:0')
+
+		div.whole-page(style='display:none')
+
+			include ./navbar
+
+			div.container-fluid
+				div.row
+					div.col-md-12(style="margin-top:50px")
+
+						section(data-route='dashboard',style="display:none")
+							include home/dashboard
+						section(data-route='about',style="display:none")
+							include home/about
+						section(data-route='users',style="display:none")
+							include home/users
+						section(data-route='profile',style="display:none")
+							include home/profile
+							
+		input#user-id.hidden(value=id)
+
+		script(src='/js/socketcluster.js')
+
+		script(src='/js/libraries/jquery.min.js')
+		script(src='/js/libraries/bootstrap.min.js')
+		script(src='/js/libraries/director.min.js')
+
+		script(src='/js/templates.js')
+
+		script(src='/js/system/communication.min.js')
+		script(src='/js/system/server.js')
+		script(src='/js/system/route.js')
+
+		script(src='/js/models/about.js')
+		script(src='/js/models/dashboard.js')
+		script(src='/js/models/users.js')
+		script(src='/js/models/profile.js')
+
+		script(src='/js/system/startup.js')

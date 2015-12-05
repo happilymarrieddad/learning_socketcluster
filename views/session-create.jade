@@ -1,0 +1,24 @@
+doctype
+html
+	head
+		title= title
+		link(rel="stylesheet",href='/css/bootstrap.min.css')
+	body
+		div.container-fluid
+			div.row
+				div.col-md-6.col-md-offset-3(style="margin-top:50px")
+					form(action="/session/store",method="post")
+						if (error)
+							div.form-group
+								label.text-danger= error
+						if (msg)
+							div.form-group
+								label.text-success= error
+						div.form-group
+							label Email
+							input.form-control(type="text",name="email")
+						div.form-group
+							label Password
+							input.form-control(type="password",name="password")
+						div.form-group
+							button.btn.btn-success.btn-block(type="submit") Login

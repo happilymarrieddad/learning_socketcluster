@@ -1,0 +1,34 @@
+div.col-md-2.col-md-offset-1
+	ul.nav.nav-pills.nav-stacked
+		li.active(role='presentation')
+			a(href='#navigation-user-data',aria-controls='navigation-user-data',role='tab',data-toggle='tab') Profile Data
+		li(role='presentation')
+			a(href='#navigation-profile-image',aria-controls='navigation-profile-image',role='tab',data-toggle='tab') Profile Image
+div.col-md-4.col-md-offset-1
+	div.col-md-12
+		div.tab-content
+			div#navigation-user-data.fade.in.active.tab-pane(role='tabpanel')
+				div.row
+					div.col-md-6.col-md-offset-3
+						div.panel.panel-default
+							div.panel-heading
+								h4.panel-title User Profile Data
+							div.panel-body
+								h6= "Username: " + user.first + " " + user.last
+								h6= "Email: " + user.email
+			div#navigation-profile-image.fade.tab-pane(role='tabpanel')
+				div.row
+					div.col-md-6.col-md-offset-3
+						div#users-uploadbox
+							h2 Upload New User Image
+							span#users-uploadarea
+								label(for='users-filebox',style='font-family:Calibri;font-size:18px') Choose an image:
+								input#users-filebox(type='file',accept="image/*")
+								br
+								div.input-group
+									input#users-namebox.form-control.input-sm(type="text",disabled)
+									span.input-group-btn
+										button#users-uploadbtn.btn.btn-sm.btn-success(type="button",disabled="true",data-userid=user.id) Upload
+
+div.col-md-2.col-md-offset-1
+	img#users-form-image.img.img-responsive(src=(user.image ? user.image : '/images/default-user-image.png'),alt='Profile Image')

@@ -1,0 +1,28 @@
+nav.navbar.navbar-default.navbar-fixed-top
+	div.navbar-inner
+		div.container
+			div.navbar-header
+				button.navbar-toggle.collapsed(type="button",data-toggle="collapse",data-target="#navbar-collapse-1",aria-expanded="false")
+					span.sr-only Toggle Navigation
+					span.icon-bar
+					span.icon-bar
+					span.icon-bar
+			div#navbar-collapse-1.collapse.navbar-collapse
+				ul.nav.navbar-nav
+					li
+						a(href='#/dashboard') Dashboard
+					li
+						a(href='#/about') About
+					li
+						a(href='#/users') Users
+				ul.nav.navbar-nav.navbar-right
+					li.dropdown
+						a.dropdown-toggle(href="#",data-toggle="dropdown",role="button",aria-haspopup="true",aria-expended="false")
+							span= first + ' '
+							span= last
+							span.caret
+						ul.dropdown-menu
+							li
+								a(href="#/profile") Profile
+							li
+								a(href="/session/destroy") Logout
